@@ -37,9 +37,9 @@ As discussed in the paper, our proposed datasets are "genius", "twitch-gamer", "
 
 When there are multiple graphs (as in the case of fb100), different ones can be loaded by passing in the `sub_dataname` argument to `load_nc_dataset` in `dataset.py`. In particular, fb100 consists of 100 graphs. We only include ["Amherst41", "Cornell5", "Johns Hopkins55", "Penn94", "Reed98"] in this repo, although others may be downloaded from [the internet archive](https://archive.org/details/oxford-2005-facebook-matrix). In the paper we test on Penn94.
 
-<img width="1740" alt="Screenshot 2021-06-03 at 6 04 19 PM" src="https://user-images.githubusercontent.com/58995473/120717800-28962880-c496-11eb-8035-7b287e37e26e.png">
+## References
 
-These datasets come from a variety of sources, as listed here:
+The datasets come from a variety of sources, as listed here:
 * **Penn94**. Traud et al 2012. _Social Structure of Facebook_ Networks
 * **pokec**. Leskovec et al. _Stanford Network Analysis Project_
 * **arXiv-year**. Hu et al 2020. _Open Graph Benchmark_
