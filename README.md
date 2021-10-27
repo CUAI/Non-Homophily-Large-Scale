@@ -8,7 +8,7 @@ NeurIPS 2021
 
 Here are codes to load our proposed datasets, compute our measure of homophily, and train various graph machine learning models in our experimental setup.
 
-### Organization
+## Organization
 `main.py` contains the main full batch experimental scripts.
 
 `main_scalable.py` contains the minibatching experimental scripts.
@@ -17,7 +17,7 @@ Here are codes to load our proposed datasets, compute our measure of homophily, 
 
 `dataset.py` loads our datasets.
 
-`models.py` contains implementations for graph machine learning models, though C&S (`correct_smooth.py`, `cs_tune_hparams.py`) are in separate files. Running several of the GNN models on larger datasets may require at least 24GB of VRAM. 
+`models.py` contains implementations for graph machine learning models, though C&S (`correct_smooth.py`, `cs_tune_hparams.py`) are in separate files. Running several of the GNN models on larger datasets may require at least 24GB of VRAM. **Our LINKX model is implemented in this file.**
 
 `homophily.py` contains functions for computing homophily measures, including the one that we introduce in `our_measure`.
 
@@ -27,7 +27,7 @@ Here are codes to load our proposed datasets, compute our measure of homophily, 
 
 `wiki_scraping/` contains the Python scripts to reproduce the "wiki" dataset by querying the Wikipedia API and cleaning up the data.
 
-### Datasets
+## Datasets
 
 <img width="2419" alt="Screenshot 2021-06-03 at 6 04 01 PM" src="https://user-images.githubusercontent.com/58995473/120717799-27fd9200-c496-11eb-940f-b16d4d528e0f.png">
 
@@ -39,8 +39,16 @@ When there are multiple graphs (as in the case of fb100), different ones can be 
 
 <img width="1740" alt="Screenshot 2021-06-03 at 6 04 19 PM" src="https://user-images.githubusercontent.com/58995473/120717800-28962880-c496-11eb-8035-7b287e37e26e.png">
 
+These datasets come from a variety of sources, as listed here:
+* **Penn94**. Traud et al 2012. _Social Structure of Facebook_ Networks
+* **pokec**. Leskovec et al. _Stanford Network Analysis Project_
+* **arXiv-year**. Hu et al 2020. _Open Graph Benchmark_
+* **snap-patents**. Leskovec et al. _Stanford Network Analysis Project_
+* **genius**. Lim and Benson 2020. _Expertise and Dynamics within Crowdsourced Musical Knowledge Curation: A Case Study of the Genius Platform_
+* **twitch-gamers**. Rozemberczki and Sarkar 2021. _Twitch Gamers: a Dataset for Evaluating Proximity Preserving and Structural Role-based Node Embeddings_
+* **wiki**. Collected by the authors of this work in 2021.
 
-### Installation instructions
+## Installation instructions
 
 1. Create and activate a new conda environment using python=3.8 (i.e. `conda create --name non-hom python=3.8`) 
 2. Activate your conda environment
