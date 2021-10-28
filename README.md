@@ -1,12 +1,15 @@
 ## Large Scale Learning on Non-Homophilous Graphs: New Benchmarks and Strong Simple Methods
 
-*Large Scale Learning on Non-Homophilous Graphs: New Benchmarks and Strong Simple Methods (arXiv link coming soon)*
+*Large Scale Learning on Non-Homophilous Graphs: New Benchmarks and Strong Simple Methods*
+
 
 Derek Lim*, Felix Hohne*, Xiuyu Li*, Sijia Linda Huang, Vaishnavi Gupta, Omkar Bhalerao, Ser-Nam Lim  
 
-NeurIPS 2021
+Published at NeurIPS 2021
 
-Here are codes to load our proposed datasets, compute our measure of homophily, and train various graph machine learning models in our experimental setup.
+Paper available at: [arXiv:2110.1446](https://arxiv.org/abs/2110.14446).
+
+Here are codes to load our proposed datasets, compute our measure of homophily, and train various graph machine learning models in our experimental setup. We include an implementation of the new graph neural network LINKX that we develop.
 
 ## Organization
 `main.py` contains the main full batch experimental scripts.
