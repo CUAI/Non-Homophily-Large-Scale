@@ -650,11 +650,11 @@ class APPNP_Net(nn.Module):
             return x
 
 
-class LINKV2(nn.Module):	
+class LINK_Concat(nn.Module):	
     """ concate A and X as joint embeddings i.e. MLP([A;X])"""
 
     def __init__(self, in_channels, hidden_channels, out_channels, num_layers, num_nodes, dropout=.5, cache=True):	
-        super(LINKV2, self).__init__()	
+        super(LINK_Concat, self).__init__()	
         self.mlp = MLP(in_channels + num_nodes, hidden_channels, out_channels, num_layers, dropout=dropout)
         self.in_channels = in_channels	
         self.cache = cache

@@ -1,4 +1,4 @@
-from models import LINK, GCN, MLP, SGC, GAT, SGCMem, MultiLP, MixHop, GCNJK, GATJK, H2GCN, APPNP_Net, LINKV2, LINKX, GPRGNN, GCNII
+from models import LINK, GCN, MLP, SGC, GAT, SGCMem, MultiLP, MixHop, GCNJK, GATJK, H2GCN, APPNP_Net, LINK_Concat, LINKX, GPRGNN, GCNII
 from data_utils import normalize
 
 def parse_method(args, dataset, n, c, d, device):
@@ -57,8 +57,8 @@ def parse_method(args, dataset, n, c, d, device):
                         dataset.graph['num_nodes'],
                         num_layers=args.num_layers, dropout=args.dropout,
                         num_mlp_layers=args.num_mlp_layers).to(device)
-    elif args.method == 'linkv2':
-        model = LINKV2(d, args.hidden_channels, c, args.num_layers, dataset.graph['num_nodes'], dropout=args.dropout).to(device)
+    elif args.method == 'link_concat':
+        model = LINK_Concat(d, args.hidden_channels, c, args.num_layers, dataset.graph['num_nodes'], dropout=args.dropout).to(device)
     elif args.method == 'linkx':
         model = LINKX(d, args.hidden_channels, c, args.num_layers, dataset.graph['num_nodes'],
         inner_activation=args.inner_activation, inner_dropout=args.inner_dropout, dropout=args.dropout, init_layers_A=args.link_init_layers_A, init_layers_X=args.link_init_layers_X).to(device)

@@ -12,9 +12,9 @@ for weight_decay in "${weight_decay_lst[@]}"; do
         for hidden_channels in "${hidden_channels_lst[@]}"; do
             if [ "$dataset" = "snap-patents" ] || [ "$dataset" = "arxiv-year" ]; then
                 echo "Running $dataset "
-                python main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method linkv2 --weight_decay $weight_decay --num_layers $num_layers --hidden_channels $hidden_channels --display_step 25 --runs 5 --directed
+                python main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method link_concat --weight_decay $weight_decay --num_layers $num_layers --hidden_channels $hidden_channels --display_step 25 --runs 5 --directed
             else
-                python main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method linkv2 --weight_decay $weight_decay --num_layers $num_layers --hidden_channels $hidden_channels --display_step 25 --runs 5
+                python main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method link_concat --weight_decay $weight_decay --num_layers $num_layers --hidden_channels $hidden_channels --display_step 25 --runs 5
             fi
         done
     done
