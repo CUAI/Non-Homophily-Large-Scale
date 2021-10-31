@@ -47,7 +47,7 @@ The datasets come from a variety of sources, as listed here:
 * **snap-patents**. Leskovec et al. _Stanford Network Analysis Project_
 * **genius**. Lim and Benson 2020. _Expertise and Dynamics within Crowdsourced Musical Knowledge Curation: A Case Study of the Genius Platform_
 * **twitch-gamers**. Rozemberczki and Sarkar 2021. _Twitch Gamers: a Dataset for Evaluating Proximity Preserving and Structural Role-based Node Embeddings_
-* **wiki**. Collected by the authors of this work in 2021.
+* **wiki**. Collected by the authors of this work in 2021. The full details are available in Appendix D.3.
 
 ## Installation instructions
 
