@@ -58,11 +58,12 @@ The datasets come from a variety of sources, as listed here:
 
 
 ## Dataset Preparation
-1. For large datasets (pokec, snap-patents, wiki), please download them manually using the links below and put them under  the `data/` directory.
+The datasets are already in the codebase or will be downloaded automatically during data loading. 
+
+We also provide the original links for our large datasets (pokec, snap-patents, wiki). You can choose to download them manually to the `data/` directory using the links below.
 * pokec data: [pokec.mat](https://drive.google.com/file/d/1dNs5E7BrWJbgcHeQ_zuy5Ozp2tRCWG0y/view?usp=sharing)
 * snap-patents data: [snap_patents.mat](https://drive.google.com/file/d/1ldh23TSY1PwXia6dU0MYcpyEgX-w3Hia/view?usp=sharing)
 * wiki data: [wiki_features.pt](https://drive.google.com/file/d/1ySNspxbK-snNoAZM7oxiWGvOnTRdSyEK/view?usp=sharing), [wiki_edges.pt](https://drive.google.com/file/d/14X7FlkjrlUgmnsYtPwdh-gGuFla4yb5u/view?usp=sharing)
-2. The remaining datasets are already in the codebase or will be downloaded automatically during data loading.
 
 ## Running experiments
 
