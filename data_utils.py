@@ -6,7 +6,7 @@ from collections import defaultdict
 from scipy import sparse as sp
 from sklearn.metrics import roc_auc_score, f1_score
 from torch_sparse import SparseTensor
-from google_drive_downloader import GoogleDriveDownloader as gdd
+import gdown
 
 
 def rand_train_test_idx(label, train_prop=.5, valid_prop=.25, ignore_negative=True):
@@ -227,9 +227,9 @@ def load_fixed_splits(dataset, sub_dataset):
 
     if not os.path.exists(f'./data/splits/{name}-splits.npy'):
         assert dataset in splits_drive_url.keys()
-        gdd.download_file_from_google_drive(
-            file_id=splits_drive_url[dataset], \
-            dest_path=f'./data/splits/{name}-splits.npy', showsize=True) 
+        gdown.download(
+            id=splits_drive_url[dataset], \
+            output=f'./data/splits/{name}-splits.npy', quiet=False) 
     
     splits_lst = np.load(f'./data/splits/{name}-splits.npy', allow_pickle=True)
     for i in range(len(splits_lst)):

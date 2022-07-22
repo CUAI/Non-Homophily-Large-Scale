@@ -7,7 +7,7 @@ import scipy.io
 import pickle
 import pandas as pd
 from sklearn.preprocessing import label_binarize
-from google_drive_downloader import GoogleDriveDownloader as gdd
+import gdown
 from os import path
 import os
 
@@ -234,9 +234,8 @@ def load_pokec_mat():
     """ requires pokec.mat
     """
     if not path.exists(f'{DATAPATH}pokec.mat'):
-        gdd.download_file_from_google_drive(
-            file_id=dataset_drive_url['pokec'], \
-            dest_path=f'{DATAPATH}pokec.mat', showsize=True)
+        gdown.download(id=dataset_drive_url['pokec'], \
+            output=f'{DATAPATH}pokec.mat', quiet=False)
 
     fulldata = scipy.io.loadmat(f'{DATAPATH}pokec.mat')
 
@@ -259,9 +258,8 @@ def load_snap_patents_mat(nclass=5):
     if not path.exists(f'{DATAPATH}snap_patents.mat'):
         p = dataset_drive_url['snap-patents']
         print(f"Snap patents url: {p}")
-        gdd.download_file_from_google_drive(
-            file_id=dataset_drive_url['snap-patents'], \
-            dest_path=f'{DATAPATH}snap_patents.mat', showsize=True)
+        gdown.download(id=dataset_drive_url['snap-patents'], \
+            output=f'{DATAPATH}snap_patents.mat', quiet=False)
 
     fulldata = scipy.io.loadmat(f'{DATAPATH}snap_patents.mat')
 
@@ -284,9 +282,8 @@ def load_snap_patents_mat(nclass=5):
 
 def load_yelpchi_dataset():
     if not path.exists(f'{DATAPATH}YelpChi.mat'):
-        gdd.download_file_from_google_drive(
-            file_id=dataset_drive_url['yelp-chi'], \
-            dest_path=f'{DATAPATH}YelpChi.mat', showsize=True)
+        gdown.download(id=dataset_drive_url['yelp-chi'], \
+            output=f'{DATAPATH}YelpChi.mat', quiet=False)
     fulldata = scipy.io.loadmat(f'{DATAPATH}YelpChi.mat')
     A = fulldata['homo']
     edge_index = np.array(A.nonzero())
@@ -378,13 +375,11 @@ def load_genius():
 
 def load_twitch_gamer_dataset(task="mature", normalize=True):
     if not path.exists(f'{DATAPATH}twitch-gamer_feat.csv'):
-        gdd.download_file_from_google_drive(
-            file_id=dataset_drive_url['twitch-gamer_feat'],
-            dest_path=f'{DATAPATH}twitch-gamer_feat.csv', showsize=True)
+        gdown.download(id=dataset_drive_url['twitch-gamer_feat'],
+            output=f'{DATAPATH}twitch-gamer_feat.csv', quiet=False)
     if not path.exists(f'{DATAPATH}twitch-gamer_edges.csv'):
-        gdd.download_file_from_google_drive(
-            file_id=dataset_drive_url['twitch-gamer_edges'],
-            dest_path=f'{DATAPATH}twitch-gamer_edges.csv', showsize=True)
+        gdown.download(id=dataset_drive_url['twitch-gamer_edges'],
+            output=f'{DATAPATH}twitch-gamer_edges.csv', quiet=False)
     
     edges = pd.read_csv(f'{DATAPATH}twitch-gamer_edges.csv')
     nodes = pd.read_csv(f'{DATAPATH}twitch-gamer_feat.csv')
@@ -407,19 +402,16 @@ def load_twitch_gamer_dataset(task="mature", normalize=True):
 def load_wiki():
 
     if not path.exists(f'{DATAPATH}wiki_features2M.pt'):
-        gdd.download_file_from_google_drive(
-            file_id=dataset_drive_url['wiki_features'], \
-            dest_path=f'{DATAPATH}wiki_features2M.pt', showsize=True)
+        gdown.download(id=dataset_drive_url['wiki_features'], \
+            output=f'{DATAPATH}wiki_features2M.pt', quiet=False)
     
     if not path.exists(f'{DATAPATH}wiki_edges2M.pt'):
-        gdd.download_file_from_google_drive(
-            file_id=dataset_drive_url['wiki_edges'], \
-            dest_path=f'{DATAPATH}wiki_edges2M.pt', showsize=True)
+        gdown.download(id=dataset_drive_url['wiki_edges'], \
+            output=f'{DATAPATH}wiki_edges2M.pt', quiet=False)
 
     if not path.exists(f'{DATAPATH}wiki_views2M.pt'):
-        gdd.download_file_from_google_drive(
-            file_id=dataset_drive_url['wiki_views'], \
-            dest_path=f'{DATAPATH}wiki_views2M.pt', showsize=True)
+        gdown.download(id=dataset_drive_url['wiki_views'], \
+            output=f'{DATAPATH}wiki_views2M.pt', quiet=False)
 
 
     dataset = NCDataset("wiki") 
